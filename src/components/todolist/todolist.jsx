@@ -112,8 +112,11 @@ function Todolist() {
     }
 
     const sortDate = () => {
+
         const sortedTodos = [...todos].sort((a, b) =>
-            sortOrder === 'descending' ? new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime() : new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+            sortOrder === 'descending' 
+        ? new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime() 
+        : new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
         );
         setTodos([...sortedTodos]);
         setSortOrder(sortOrder === 'descending' ? 'ascending' : 'descending');
